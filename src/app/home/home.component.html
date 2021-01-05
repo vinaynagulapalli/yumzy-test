@@ -1,0 +1,80 @@
+<div class="container"  *ngIf="detailedOrderDetails && detailedOrderDetails!=null">
+  <div class="row">
+    <div class="col-sm-6 p-3" >
+        <div class="card border-primary" >
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <h3><b> <i class="fas fa-user"></i>Customer Information</b></h3> 
+            <li class="list-group-item borderless"><b>Name</b>  : {{detailedOrderDetails.customerStatus.customerName}}</li>
+            <li class="list-group-item borderless"><b>Phone Number</b>  : {{detailedOrderDetails.customerStatus.phoneNo}}</li>
+            <li class="list-group-item borderless"> <b>Email</b> : {{detailedOrderDetails.customerStatus.emailId}}</li>
+            <li class="list-group-item borderless"><b>Address</b> : {{detailedOrderDetails.customerStatus.address.fullAddress}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-sm-6 p-3">
+        <div class="card border-primary">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item borderless"><h5><b>Order Date {{detailedOrderDetails.orderDate | date:'MM/dd/yyyy'}}</b></h5></li>
+            <li class="list-group-item borderless"><h5><b><i class="fas fa-calculator"></i>Order Details </b></h5></li>
+            <li class="list-group-item borderless">{{detailedOrderDetails.orderDetails[0].orderName}} {{detailedOrderDetails.orderDetails[0].value}}</li>
+            <li class="list-group-item borderless">{{detailedOrderDetails.orderDetails[1].orderName}} {{detailedOrderDetails.orderDetails[1].value}}</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  
+    <div class="col-sm-6 p-3">
+      <div>
+        <div class="card border-primary">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+            <h5>
+              {{detailedOrderDetails.restaurantStatus.outletName}} ({{detailedOrderDetails.restaurantStatus.locality}})</h5>
+            <li class="list-group-item borderless"><b>Phone No.</b> : {{detailedOrderDetails.restaurantStatus.mobile}}</li>
+            <li class="list-group-item borderless"><b>Alternate No.</b> : {{detailedOrderDetails.restaurantStatus.mobile2}} , {{detailedOrderDetails.restaurantStatus.mobile3}}</li>
+            <li class="list-group-item borderless"><b>Email</b> : {{detailedOrderDetails.restaurantStatus.email}}</li>
+            <li class="list-group-item borderless"><b>Address</b> : {{detailedOrderDetails.restaurantStatus.address.apartmentAddress}},
+              {{detailedOrderDetails.restaurantStatus.address.landmark}},
+              {{detailedOrderDetails.restaurantStatus.address.streetAddress1}},
+              {{detailedOrderDetails.restaurantStatus.address.city}},
+              {{detailedOrderDetails.restaurantStatus.address.state}},
+              {{detailedOrderDetails.restaurantStatus.address.pincode}},
+              {{detailedOrderDetails.restaurantStatus.address.country}}
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary text-right">Update Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-sm-6 p-3">
+      <div class="card border-primary">
+        <div class="card-body">
+          <h5><b>Billing</b></h5>
+          <h5>Item Total</h5>
+          <h5> GST </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item borderless">Total Amount :: {{detailedOrderDetails.refundStatus.refund.refundAmount}}</li>
+          <li class="list-group-item borderless">Payment Mode :: <b>{{detailedOrderDetails.paymentStatus.method}}</b></li>
+          <li class="list-group-item borderless">Payment Status ::  {{detailedOrderDetails.paymentStatus.status}}</li>
+          <li class="list-group-item borderless">Refund Status :: {{detailedOrderDetails.refundStatus.refund.refundStatus}}</li>
+          <li class="list-group-item borderless">Refund Reason :: {{detailedOrderDetails.refundStatus.refund.refundReason}}</li>
+          <li class="list-group-item borderless">Refund Amount{{detailedOrderDetails.refundStatus.refund.refundAmount}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
